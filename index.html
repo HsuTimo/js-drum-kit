@@ -66,8 +66,10 @@
         audio.currentTime = 0;
         audio.play();
         key.classList.add('playing')
+    }
+    function countKeys(){
         counter++;
-        console.log(counter);
+        //console.log(counter);
         if(counter==13){
         	endScreen();
         }
@@ -86,6 +88,7 @@
     const keys = document.querySelectorAll('.key');
     keys.forEach(key => key.addEventListener('transitionend',removeTransition));
     window.addEventListener('keydown', playSound);
+    window.addEventListener('keydown', countKeys)
     
 </script>
 </body>
