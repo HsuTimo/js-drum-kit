@@ -77,8 +77,11 @@
     function endScreen(){
       const audio = new Audio('sounds/violin.mp3');
       audio.play();
+      document.body.style.backgroundImage = "none";
+      document.body.style.backgroundColor = "black"; 
       document.body.style.backgroundImage = "url('https://images-na.ssl-images-amazon.com/images/I/716a6G1nauL._AC_SL1500_.jpg')";
       document.body.style.backgroundRepeat = "no-repeat";
+      document.body.style.backgroundPosition= "center"; 
     }
     function removeTransition(e){
         if(e.propertyName !== 'transform') return;
