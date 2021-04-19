@@ -58,6 +58,7 @@
   <audio data-key="76" src="sounds/tink.wav"></audio>
 
 <script>
+    let counter = 0;
     function playSound(e){
         const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
         const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
@@ -65,8 +66,18 @@
         audio.currentTime = 0;
         audio.play();
         key.classList.add('playing')
+        counter++;
+        console.log(counter);
+        if(counter==13){
+        	endScreen();
+        }
     }
-    
+    function endScreen(){
+      const audio = new Audio('sounds/violin.mp3');
+      audio.play();
+      document.body.style.backgroundImage = "url('https://images-na.ssl-images-amazon.com/images/I/716a6G1nauL._AC_SL1500_.jpg')";
+      document.body.style.backgroundRepeat = "no-repeat";
+    }
     function removeTransition(e){
         if(e.propertyName !== 'transform') return;
         console.log(this);
